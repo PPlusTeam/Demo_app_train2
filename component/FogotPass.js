@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-
-// import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-
 import {
   View,
   Text,
@@ -10,49 +7,68 @@ import {
   TextInput,
   CustomButton,
   Button,
-  TouchableOpacity
+  TouchableOpacity,
+  Icon
 } from 'react-native';
 
-export default class Login extends React.Component {
 
+export default class FogotPass extends Component {
+
+  static navigationOptions = {
+    title: "FogotPass"
+  }
   render() {
+
+
+
     return (
       <View style={styles.container}>
         <View>
           <Image
             style={styles.logo}
-            source={require('../../source/images/logo_yellow.png')}/>
+            source={require('../source/images/logo_yellow.png')}/>
           <Text style={styles.sologan}>
             Đăng nhập để nhận vô vàn giải thưởng trong hệ thống của chúng tôi
           </Text>
         </View>
-        <View style={styles.fogetPass}>
-          <TouchableOpacity>
-            <Text
-              style={{
-              fontSize: 20,
-              color: 'white',
-              alignSelf: 'center',
-              marginBottom: 10,
-              marginTop: 20
+
+        <View style = {styles.viewLogin}>
+          <TextInput
+            style={styles.edtName}
+            placeholder="Địa chỉ email"
+            underlineColorAndroid='transparent'
+          />
+          </View>
+          <TouchableOpacity
+            style={{
+              top: -60,
+              left:310,
+              zIndex: 1
             }}>
+          <Image
+            source={require('../source/images/btnOK.png')}/>
+
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <Text style={styles.fgP}>
               Quên mật khẩu ?
             </Text>
           </TouchableOpacity>
+
+        <View style={styles.fogetPass}>
           <View style={styles.viewLine}>
             <View style={styles.line}></View>
             <Text
-              style={{
-              color: 'white',
-              fontSize: 20
-            }}>Hoặc</Text>
+              style={styles.or}>Hoặc</Text>
             <View style={styles.line}></View>
           </View>
         </View>
+
         <View>
           <TouchableOpacity >
             <View style={styles.btnFace}>
-              <Image source={require('../../source/images/icF.png')}/>
+              <Image source={require('../source/images/icF.png')}/>
               <Text
                 style={{
                 color: 'white',
@@ -74,7 +90,6 @@ export default class Login extends React.Component {
               </Text>
             </View>
           </TouchableOpacity>
-
           <TouchableOpacity>
             <Text
               style={{
@@ -97,35 +112,50 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#121A1E'
   },
+  container_login:{
+    backgroundColor:'blue',
+    flexDirection:'column'
+  },
   viewLogin: {
     backgroundColor: 'white',
-    width: 300,
+    top: 20,
+    width: 280,
     alignSelf: 'center',
     borderRadius: 10,
-    padding: 10
+    padding: 10,
+    zIndex: 1
   },
-  edtName: {},
+  edtName: {
+    padding: 20
+  },
   edtPass: {},
   logo: {
-    height: 200,
-    width: 300,
+    height: 150,
+    width: 250,
+    marginTop:10,
     alignSelf: 'center'
   },
   sologan: {
     alignSelf: 'center',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 18,
     color: 'white',
-    width: 300
+    width: 240
   },
-  fogetPass: {
-    alignSelf: 'center'
+  fgP: {
+    color: 'white',
+    alignSelf: 'center',
+    position: 'relative',
   },
   viewLine: {
     flexDirection: 'row',
     alignSelf: 'center',
     marginTop: 10,
     marginBottom: 10
+  },
+  or:{
+    color: 'white',
+    fontSize: 14
   },
   line: {
     height: 1,
@@ -136,7 +166,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   btnFace: {
-    height: 60,
+    height: 50,
     width: 300,
     backgroundColor: '#3B5998',
     alignSelf: 'center',

@@ -14,9 +14,12 @@ import {
 
 export default class Userlogin extends Component {
 
+  static navigationOptions = {
+    title: "Verify"
+  }
   render() {
 
-      var {navigate} = this.props.navigation;
+    
 
     return (
       <View style={styles.container}>
@@ -38,9 +41,7 @@ export default class Userlogin extends Component {
 
             <View style={{
               height:1,
-              backgroundColor:'black',
-              width:250,
-              alignSelf:'center'
+              backgroundColor:'black'
               }}/>
           <TextInput
             style={styles.edtName}
@@ -50,7 +51,7 @@ export default class Userlogin extends Component {
           </View>
           <TouchableOpacity
             style={{
-              top: -80,
+              top: -90,
               left:310,
               zIndex: 1
             }}>
@@ -88,11 +89,7 @@ export default class Userlogin extends Component {
           </TouchableOpacity>
 
           {/* Button Create Acc */}
-          <TouchableOpacity
-            onPress={
-              () => navigate("FogotPass",{})
-            }
-          >
+          <TouchableOpacity>
             <View style={styles.btnCreate}>
               <Text
                 style={{
@@ -133,14 +130,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     top: 20,
     width: 280,
-    height: 130,
+    height: 150,
     alignSelf: 'center',
     borderRadius: 10,
-    justifyContent:'center',
+    padding: 10,
     zIndex: 1
   },
   edtName: {
-    paddingLeft: 30
+    padding: 20
   },
   edtPass: {},
   logo: {

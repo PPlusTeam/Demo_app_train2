@@ -12,6 +12,26 @@ import {
   View
 } from 'react-native';
 
+import {
+  StackNavigator,
+} from 'react-navigation';
+
+import Userlogin from './component/Userlogin';
+import Splash from './component/Splash';
+import Verify from './component/Verify';
+import CreateNew from './component/CreateNew';
+import FogotPass from './component/FogotPass';
+
+const Navigation = StackNavigator({
+  Splash : {screen:Splash},
+  Userlogin: {screen:Userlogin},
+  Verify:{screen:Verify},
+  CreateNew:{screen:CreateNew},
+  FogotPass:{screen:FogotPass}
+});
+
+export default Navigation;
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -19,31 +39,31 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-import Userlogin from './component/Userlogin';
-// import Splash from'./components/login/Splash';
 
-export default class App extends Component<{}> {
-  render() {
-    return (
-        <Userlogin/>)
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+
+// export default class App extends Component<{}> {
+//   render() {
+//     return (
+//         <Userlogin/>)
+//   }
+// }
+//
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#F5FCFF',
+//   },
+//   welcome: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     margin: 10,
+//   },
+//   instructions: {
+//     textAlign: 'center',
+//     color: '#333333',
+//     marginBottom: 5,
+//   },
+// });

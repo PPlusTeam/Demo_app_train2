@@ -12,11 +12,12 @@ import {
 } from 'react-native';
 
 
-export default class Userlogin extends Component {
+export default class CreatNew extends Component {
 
+  static navigationOptions = {
+    title: "CreatNew"
+  }
   render() {
-
-      var {navigate} = this.props.navigation;
 
     return (
       <View style={styles.container}>
@@ -38,19 +39,27 @@ export default class Userlogin extends Component {
 
             <View style={{
               height:1,
-              backgroundColor:'black',
-              width:250,
-              alignSelf:'center'
+              backgroundColor:'black'
               }}/>
           <TextInput
             style={styles.edtName}
             placeholder="Địa chỉ email"
             underlineColorAndroid='transparent'
           />
+          <View style={{
+            height:1,
+            backgroundColor:'black'
+            }}/>
+          <TextInput
+            style={styles.edtName}
+            placeholder="Mật khẩu"
+            underlineColorAndroid='transparent'
+          />
           </View>
+
           <TouchableOpacity
             style={{
-              top: -80,
+              top: -100,
               left:310,
               zIndex: 1
             }}>
@@ -58,22 +67,6 @@ export default class Userlogin extends Component {
             source={require('../source/images/btnOK.png')}/>
 
           </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={styles.fgP}>
-              Quên mật khẩu ?
-            </Text>
-          </TouchableOpacity>
-
-        <View style={styles.fogetPass}>
-          <View style={styles.viewLine}>
-            <View style={styles.line}></View>
-            <Text
-              style={styles.or}>Hoặc</Text>
-            <View style={styles.line}></View>
-          </View>
-        </View>
-
         <View>
           <TouchableOpacity >
             <View style={styles.btnFace}>
@@ -88,18 +81,14 @@ export default class Userlogin extends Component {
           </TouchableOpacity>
 
           {/* Button Create Acc */}
-          <TouchableOpacity
-            onPress={
-              () => navigate("FogotPass",{})
-            }
-          >
+          <TouchableOpacity>
             <View style={styles.btnCreate}>
               <Text
                 style={{
                 color: 'white',
                 fontSize: 14
               }}>
-                Tạo tài khoản mới
+                Quay lại
               </Text>
             </View>
           </TouchableOpacity>
@@ -133,14 +122,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     top: 20,
     width: 280,
-    height: 130,
     alignSelf: 'center',
     borderRadius: 10,
-    justifyContent:'center',
+    padding: 10,
     zIndex: 1
   },
   edtName: {
-    paddingLeft: 30
+    padding: 10
   },
   edtPass: {},
   logo: {
@@ -156,29 +144,7 @@ const styles = StyleSheet.create({
     color: 'white',
     width: 240
   },
-  fgP: {
-    color: 'white',
-    alignSelf: 'center',
-    position: 'relative',
-  },
-  viewLine: {
-    flexDirection: 'row',
-    alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 10
-  },
-  or:{
-    color: 'white',
-    fontSize: 14
-  },
-  line: {
-    height: 1,
-    alignSelf: 'center',
-    width: 100,
-    margin: 10,
-    alignSelf: 'center',
-    backgroundColor: 'white'
-  },
+
   btnFace: {
     height: 50,
     width: 300,
@@ -198,6 +164,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     marginTop: 10,
-    marginBottom: 20
+    marginBottom: 10
   }
 });

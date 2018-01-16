@@ -3,17 +3,29 @@ import {
   View,
   Text,
   StyleSheet,
-  Image
+  Image,
+  TouchableOpacity
 } from 'react-native';
 export default class Splash extends Component {
+  
   render(){
     return(
+      <TouchableOpacity
+        onPress ={
+          () => navigate("Userlogin",{})
+        }
+      >
       <View style={styles.splash}>
         <Image
           style ={styles.imagesLogo}
-          source={require('../../source/images/logo.png')}
+          source={require('../source/images/logo.png')}
          />
+         <Button onPress ={
+           () => navigate("Userlogin",{})
+           title='next'
+         }
       </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -23,8 +35,7 @@ splash: {
   backgroundColor: '#fcc813',
 },
 imagesLogo:{
-  width: 260,
-  height: 240,
+  height: 300,
   alignSelf:'center',
   marginTop: 80
 }
