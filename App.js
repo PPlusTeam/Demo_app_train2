@@ -25,9 +25,9 @@ import SetProfile from'./component/SetProfile';
 import UpdateProfile from './component/UpdateProfile';
 
 const Navigation = StackNavigator({
+  Verify:{screen:Verify},
   Splash : {screen:Splash},
   Userlogin: {screen:Userlogin},
-  Verify:{screen:Verify},
   CreateNew:{screen:CreateNew},
   FogotPass:{screen:FogotPass},
   SetProfile:{screen:SetProfile},

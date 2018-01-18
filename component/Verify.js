@@ -11,14 +11,12 @@ import {
   Icon
 } from 'react-native';
 
-
 export default class Userlogin extends Component {
 
   static navigationOptions = {
     title: "Verify"
   }
   render() {
-
 
     return (
       <View style={styles.container}>
@@ -31,58 +29,72 @@ export default class Userlogin extends Component {
           </Text>
         </View>
 
-        <View style = {styles.viewLogin}>
+        <View style={styles.viewLogin}>
           <TextInput
             style={styles.edtName}
             placeholder='EW - 98541'
-            underlineColorAndroid='transparent'
-          />
+            underlineColorAndroid='transparent'/>
+        </View>
 
-          </View>
-          <TouchableOpacity
-            style={{
-              top: -90,
-              left:310,
-              zIndex: 1
-            }}>
-          <Image
-            source={require('../source/images/btnOK.png')}/>
-
-          </TouchableOpacity>
+        <View>
+          <ButtonVerify insideButton="helo"/>
+        </View>
       </View>
 
     );
   }
 }
 
+class ButtonVerify extends Component {
+  render() {
+    return (
+      <TouchableOpacity style={styles.twobtn}>
+        <Text>
+          {this.props.insideButton}
+        </Text>
+      </TouchableOpacity>
+    );
+  }
+}
 const styles = StyleSheet.create({
+  twobtn: {
+    height: 50,
+    width: 100,
+    position: 'relative',
+    backgroundColor: 'red',
+    top: 20
+
+  },
   container: {
     flex: 1,
     backgroundColor: '#121A1E'
   },
-  container_login:{
-    backgroundColor:'blue',
-    flexDirection:'column'
+  container_login: {
+    backgroundColor: 'blue',
+    flexDirection: 'column'
   },
   viewLogin: {
     backgroundColor: 'white',
     top: 20,
     width: 280,
-    height: 150,
+    height: 100,
     alignSelf: 'center',
     borderRadius: 10,
-    padding: 10,
+    position: 'relative',
+    flexDirection: 'column',
+    justifyContent: 'center',
     zIndex: 1
   },
   edtName: {
-    padding: 20,
-    fontSize 20,
+    padding: 10,
+    fontSize: 30,
+    textAlign: 'center'
   },
   edtPass: {},
   logo: {
     height: 150,
     width: 250,
-    marginTop:10,
+    marginTop: 10,
     alignSelf: 'center'
   },
   sologan: {
@@ -95,45 +107,6 @@ const styles = StyleSheet.create({
   fgP: {
     color: 'white',
     alignSelf: 'center',
-    position: 'relative',
-  },
-  viewLine: {
-    flexDirection: 'row',
-    alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 10
-  },
-  or:{
-    color: 'white',
-    fontSize: 14
-  },
-  line: {
-    height: 1,
-    alignSelf: 'center',
-    width: 100,
-    margin: 10,
-    alignSelf: 'center',
-    backgroundColor: 'white'
-  },
-  btnFace: {
-    height: 50,
-    width: 300,
-    backgroundColor: '#3B5998',
-    alignSelf: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    borderRadius: 5
-  },
-  btnCreate: {
-    height: 50,
-    width: 160,
-    borderColor: 'white',
-    borderWidth: 1,
-    borderRadius: 80,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 20
+    position: 'relative'
   }
 });
