@@ -59,7 +59,11 @@ export default class Userlogin extends Component {
 
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress ={
+              ()=> navigate("FogotPass",{})
+            }
+          >
             <Text style={styles.fgP}>
               Quên mật khẩu ?
             </Text>
@@ -90,7 +94,7 @@ export default class Userlogin extends Component {
           {/* Button Create Acc */}
           <TouchableOpacity
             onPress={
-              () => navigate("FogotPass",{})
+              () => navigate("CreateNew",{})
             }
           >
             <View style={styles.btnCreate}>

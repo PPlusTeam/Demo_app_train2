@@ -21,13 +21,20 @@ import Splash from './component/Splash';
 import Verify from './component/Verify';
 import CreateNew from './component/CreateNew';
 import FogotPass from './component/FogotPass';
+import SetProfile from'./component/SetProfile';
+import UpdateProfile from './component/UpdateProfile';
 
 const Navigation = StackNavigator({
   Splash : {screen:Splash},
   Userlogin: {screen:Userlogin},
   Verify:{screen:Verify},
   CreateNew:{screen:CreateNew},
-  FogotPass:{screen:FogotPass}
+  FogotPass:{screen:FogotPass},
+  SetProfile:{screen:SetProfile},
+  UpdateProfile:{screen:UpdateProfile}
+},
+{
+    headerMode: 'none',
 });
 
 export default Navigation;

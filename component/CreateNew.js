@@ -18,7 +18,7 @@ export default class CreatNew extends Component {
     title: "CreatNew"
   }
   render() {
-
+  var {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
         <View>
@@ -26,7 +26,9 @@ export default class CreatNew extends Component {
             style={styles.logo}
             source={require('../source/images/logo_yellow.png')}/>
           <Text style={styles.sologan}>
-            Đăng nhập để nhận vô vàn giải thưởng trong hệ thống của chúng tôi
+            Đăng nhập để nhận vô vàn giải thưởng
+             trong
+              hệ thống của chúng tôi
           </Text>
         </View>
 
@@ -62,7 +64,11 @@ export default class CreatNew extends Component {
               top: -100,
               left:310,
               zIndex: 1
-            }}>
+            }}
+            onPress = {
+              () => navigate("SetProfile",{})
+            }
+            >
           <Image
             source={require('../source/images/btnOK.png')}/>
 
@@ -81,7 +87,11 @@ export default class CreatNew extends Component {
           </TouchableOpacity>
 
           {/* Button Create Acc */}
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress = {
+              ()=> navigate("Userlogin",{})
+            }
+          >
             <View style={styles.btnCreate}>
               <Text
                 style={{

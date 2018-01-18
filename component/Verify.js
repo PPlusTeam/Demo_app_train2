@@ -19,7 +19,6 @@ export default class Userlogin extends Component {
   }
   render() {
 
-    
 
     return (
       <View style={styles.container}>
@@ -35,19 +34,10 @@ export default class Userlogin extends Component {
         <View style = {styles.viewLogin}>
           <TextInput
             style={styles.edtName}
-            placeholder="Họ và tên"
+            placeholder='EW - 98541'
             underlineColorAndroid='transparent'
           />
 
-            <View style={{
-              height:1,
-              backgroundColor:'black'
-              }}/>
-          <TextInput
-            style={styles.edtName}
-            placeholder="Địa chỉ email"
-            underlineColorAndroid='transparent'
-          />
           </View>
           <TouchableOpacity
             style={{
@@ -59,58 +49,6 @@ export default class Userlogin extends Component {
             source={require('../source/images/btnOK.png')}/>
 
           </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={styles.fgP}>
-              Quên mật khẩu ?
-            </Text>
-          </TouchableOpacity>
-
-        <View style={styles.fogetPass}>
-          <View style={styles.viewLine}>
-            <View style={styles.line}></View>
-            <Text
-              style={styles.or}>Hoặc</Text>
-            <View style={styles.line}></View>
-          </View>
-        </View>
-
-        <View>
-          <TouchableOpacity >
-            <View style={styles.btnFace}>
-              <Image source={require('../source/images/icF.png')}/>
-              <Text
-                style={{
-                color: 'white',
-                marginLeft: 20,
-                fontSize: 18
-              }}>Đăng nhập với Facebook</Text>
-            </View>
-          </TouchableOpacity>
-
-          {/* Button Create Acc */}
-          <TouchableOpacity>
-            <View style={styles.btnCreate}>
-              <Text
-                style={{
-                color: 'white',
-                fontSize: 14
-              }}>
-                Tạo tài khoản mới
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text
-              style={{
-              fontSize: 18,
-              color: 'white',
-              alignSelf: 'center'
-            }}>Điều khoản sử dụng</Text>
-          </TouchableOpacity>
-
-        </View>
-
       </View>
 
     );
@@ -137,7 +75,8 @@ const styles = StyleSheet.create({
     zIndex: 1
   },
   edtName: {
-    padding: 20
+    padding: 20,
+    fontSize 20,
   },
   edtPass: {},
   logo: {

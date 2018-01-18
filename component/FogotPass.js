@@ -19,7 +19,7 @@ export default class FogotPass extends Component {
   }
   render() {
 
-
+    var {navigate} = this.props.navigation;
 
     return (
       <View style={styles.container}>
@@ -44,7 +44,11 @@ export default class FogotPass extends Component {
               top: -60,
               left:310,
               zIndex: 1
-            }}>
+            }}
+            onPress ={
+              ()=> navigate("UpdateProfile",{})
+            }
+            >
           <Image
             source={require('../source/images/btnOK.png')}/>
 
@@ -52,7 +56,7 @@ export default class FogotPass extends Component {
 
           <TouchableOpacity>
             <Text style={styles.fgP}>
-              Quên mật khẩu ?
+            Chúng tôi sẽ gửi mật khẩu mới vào hòm thư của bạn!
             </Text>
           </TouchableOpacity>
 
@@ -79,14 +83,17 @@ export default class FogotPass extends Component {
           </TouchableOpacity>
 
           {/* Button Create Acc */}
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={
+            ()=> navigate("Userlogin",{})
+          }>
             <View style={styles.btnCreate}>
               <Text
                 style={{
                 color: 'white',
                 fontSize: 14
               }}>
-                Tạo tài khoản mới
+                Quay lại
               </Text>
             </View>
           </TouchableOpacity>
