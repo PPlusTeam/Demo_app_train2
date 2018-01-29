@@ -40,11 +40,17 @@ export default class Userlogin extends Component {
       sologan: "Nhập mã số gồm 6 ký tự được gửi về điện thoại của bạn!",
       note1: "*Nhấn gửi lại nếu bạn không nhận được mã xác nhận.",
       note2: "Hãy chắc số điện thoại của bạn đã được nhập chính xác.",
-      resend:"Gửi lại",
-      ok:"Xác nhận",
-      back:"Quay lại",
-      placeholder:"XX-XXXXX9"
+      resend: "Gửi lại",
+      ok: "Xác nhận",
+      back: "Quay lại",
+      placeholder: "XX-XXXXX9"
     };
+  }
+  _Back() {
+    this
+      .props
+      .navigation
+      .navigate('UpdateInfoMail')
   }
   render() {
     var {navigate} = this.props.navigation;
@@ -56,13 +62,11 @@ export default class Userlogin extends Component {
 
         <View style={s.viewLogin}>
           <TextInput
-             underlineColorAndroid='transparent'
-             style={{
-               textAlign:'center',
-               justifyContent: 'center',
-               
-             }}
-          />
+            underlineColorAndroid='transparent'
+            style={{
+            textAlign: 'center',
+            justifyContent: 'center'
+          }}/>
         </View>
 
         <View style={styles.btnVerify}>
@@ -82,17 +86,11 @@ export default class Userlogin extends Component {
           </Text>
 
         </View>
-        <TouchableOpacity onPress={()=>navigate("UpdateProfile",{})}>
-          <View style={styles.btnCreate}>
-            <Text
-              style={{
-              color: 'white',
-              fontSize: 14
-            }}>
-              {this.state.back}
-            </Text>
-          </View>
-        </TouchableOpacity>
+        <BtnCreateBack
+          text={this.state.back}
+          onPress={this
+          ._Back
+          .bind(this)}/>
       </View>
 
     );

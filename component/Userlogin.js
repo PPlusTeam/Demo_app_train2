@@ -43,6 +43,12 @@ export default class Userlogin extends Component {
       pass: "Mật khẩu"
     };
   }
+  _Login() {
+    this
+      .props
+      .navigation
+      .navigate('Main')
+  }
   _ForgotPass() {
     this
       .props
@@ -73,6 +79,9 @@ export default class Userlogin extends Component {
         </View>
 
         <BtnOK
+          onPress={this
+          ._Login
+          .bind(this)}
           style={{
           top: -80,
           left: 315,
@@ -85,8 +94,8 @@ export default class Userlogin extends Component {
           ._ForgotPass
           .bind(this)}/>
 
-        <Or or={this.state.or}/> 
-        
+        <Or or={this.state.or}/>
+
         <BtnCreateBack
           onPress={this
           ._Register

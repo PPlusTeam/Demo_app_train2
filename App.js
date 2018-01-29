@@ -10,29 +10,33 @@ import {StackNavigator} from 'react-navigation';
 
 import Userlogin from './component/Userlogin';
 import Splash from './component/Splash';
+import Main from './component/Main';
 import Verify from './component/Verify';
 import Register from './component/Register';
 import FogotPass from './component/FogotPass';
 import SetProfile from './component/SetProfile';
 import UpdateProfile from './component/UpdateProfile';
 import UpdateInfoMail from './component/UpdateInfoMail';
+
+
+// import ButtonFace from './component/com/ButtonFace';
 // import LoginFacebook from './component/com/LoginFacebook';
 
 const Navigation = StackNavigator({
   // LoginFacebook:{screen:LoginFacebook},
+  // ButtonFace : {screen: ButtonFace},
+  Userlogin:{screen: Userlogin},
+  Main: {screen:Main},
+  Register: {screen: Register},
   Verify:{screen:Verify},
   UpdateInfoMail:{screen:UpdateInfoMail},
   FogotPass:{screen:FogotPass},
-  Userlogin:{screen: Userlogin},
   Splash:{screen: Splash},
-  
 },
 {
   headerMode:'none'
 });
-
 export default Navigation;
-
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',

@@ -12,8 +12,22 @@ import {
 } from 'react-native';
 
 import Logo from './com/Logo';
-import Rule from './com/Rule';
 import ButtonFace from './com/ButtonFace';
+import Rule from './com/Rule';
+import Or from './com/Or';
+import TXTinput from './com/TXTinput';
+import Line from './com/Line';
+import BtnOK from './com/BtnOK';
+import TouchText2 from './com/TouchText2';
+import BtnCreateBack from './com/BtnCreateBack';
+
+const imageSource = {
+  userLogin: {
+    user: require('../source/images/icon/ic_u.png'),
+    mail: require('../source/images/icon/ic_mail.png'),
+    pass: require('../source/images/icon/ic_pw.png')
+  }
+};
 
 export default class Register extends Component {
 
@@ -33,83 +47,42 @@ export default class Register extends Component {
   static navigationOptions = {
     title: "CreatNew"
   }
+  _Back() {
+    this
+      .props
+      .navigation
+      .navigate('Userlogin')
+  }
+  _UpdateInfo() {
+    this
+      .props
+      .navigation
+      .navigate('UpdateInfoMail')
+  }
   render() {
     var {navigate} = this.props.navigation;
+    var s = require('./style/ContainerStyle');
     return (
       <View style={styles.container}>
         <Logo sologan={this.state.sologan}/>
-
-        <View style={styles.viewLogin}>
-          <View style={styles.viewInput}>
-            <Image
-              style={{
-              height: 20,
-              width: 20,
-              alignSelf: 'center'
-            }}
-              source={require('../source/images/icon/ic_u.png')}/>
-
-            <TextInput
-              style={styles.edtName}
-              placeholder={this.state.name}
-              underlineColorAndroid='transparent'/>
-
-          </View>
-
-          <View
-            style={{
-            height: 1,
-            backgroundColor: 'black'
-          }}/>
-
-          <View style={styles.viewInput}>
-            <Image
-              style={{
-              height: 20,
-              width: 20,
-              alignSelf: 'center'
-            }}
-              source={require('../source/images/icon/ic_mail.png')}/>
-            <TextInput
-              style={styles.edtName}
-              placeholder={this.state.email}
-              underlineColorAndroid='transparent'/>
-          </View>
-
-          <View
-            style={{
-            height: 1,
-            backgroundColor: 'black'
-          }}/>
-
-
-          <View style={styles.viewInput}>
-            <Image
-              style={{
-              height: 20,
-              width: 20,
-              alignSelf: 'center'
-            }}
-              source={require('../source/images/icon/ic_pw.png')}/>
-            <TextInput
-              style={styles.edtName}
-              placeholder={this.state.pass}
-              underlineColorAndroid='transparent'/>
-          </View>
+        <View style={s.viewLogin}>
+          <TXTinput SRCimage={imageSource.userLogin.user} txtContent={this.state.name}/>
+          <Line/>
+          <TXTinput SRCimage={imageSource.userLogin.mail} txtContent={this.state.email}/>
+          <Line/>
+          <TXTinput SRCimage={imageSource.userLogin.pass} txtContent={this.state.pass}/>
         </View>
-
-        <TouchableOpacity
+        <BtnOK
           style={{
-          top: -100,
-          left: 310,
+          top: -120,
+          left: 315,
           zIndex: 1
         }}
-          onPress=
-          { () => navigate("UpdateProfile",{}) }>
-          <Image source={require('../source/images/btnOK.png')}/>
-        </TouchableOpacity>
+          onPress={this
+          ._UpdateInfo
+          .bind(this)}/>
         <View>
-          <TouchableOpacity >
+          {/* <TouchableOpacity >
             <View style={styles.btnFace}>
               <Image source={require('../source/images/icF.png')}/>
               <Text
@@ -119,20 +92,14 @@ export default class Register extends Component {
                 fontSize: 18
               }}>{this.state.facebook}</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           {/* Button Create Acc */}
-          <TouchableOpacity onPress= { ()=> navigate("Userlogin",{}) }>
-            <View style={styles.btnCreate}>
-              <Text
-                style={{
-                color: 'white',
-                fontSize: 14
-              }}>
-                {this.state.back}
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <BtnCreateBack
+            text={this.state.back}
+            onPress={this
+            ._Back
+            .bind(this)}/>
 
           <Rule/>
 
@@ -153,9 +120,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     flexDirection: 'column'
   },
-  
+
   viewInput: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   edtName: {
     width: 200,

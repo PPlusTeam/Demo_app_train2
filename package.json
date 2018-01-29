@@ -10,7 +10,13 @@
     "react": "16.2.0",
     "react-native": "0.52.2",
     "react-native-fbsdk": "^0.7.0",
+    "react-native-gesture-handler": "^1.0.0-alpha.40",
     "react-native-keyboard-aware-scroll-view": "^0.4.3",
+    "react-native-material-bottom-navigation": "^0.7.0",
+    "react-native-tab-navigator": "^0.3.4",
+    "react-native-tab-view": "0.0.74",
+    "react-native-tabbar-bottom": "^1.0.4",
+    "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.0.0-beta.27",
     "util": "^0.10.3"
   },
