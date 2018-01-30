@@ -8,31 +8,35 @@ import {
   CustomButton,
   Button,
   TouchableOpacity,
+  Keyboard,
   Icon,
-  Alert
+  Alert,
+  KeyboardAvoidingView
 } from 'react-native';
 
 import Logo from './com/Logo';
-import ButtonFace from './com/ButtonFace';
 import Rule from './com/Rule';
 import Or from './com/Or';
 import TXTinput from './com/TXTinput';
+import TXTinputPass from './com/TXTinputPass';
 import Line from './com/Line';
 import BtnOK from './com/BtnOK';
 import TouchText2 from './com/TouchText2';
 import BtnCreateBack from './com/BtnCreateBack';
-
+import ButtonFace from './com/ButtonFace';
 const imageSource = {
   userLogin: {
     mail: require('../source/images/icon/ic_mail.png'),
     pass: require('../source/images/icon/ic_pw.png')
   }
 };
-
+Keyboard.dismiss(); 
 export default class Userlogin extends Component {
   constructor() {
     super();
     this.state = {
+      cEmail: '',
+      cPass: '',
       sologan: "Đăng nhập để nhận vô vàn giải thưởng trong hệ thống của chúng tôi",
       forgot: "Quên mật khẩu ?",
       or: "Hoặc",
@@ -44,67 +48,89 @@ export default class Userlogin extends Component {
     };
   }
   _Login() {
+    Keyboard.dismiss();
+
     this
       .props
       .navigation
       .navigate('Main')
   }
   _ForgotPass() {
+    Keyboard.dismiss();
+
     this
       .props
       .navigation
       .navigate('FogotPass');
   };
   _Register() {
+    Keyboard.dismiss();
+
     this
       .props
       .navigation
       .navigate('Register');
+  }
+  _Rule() {}
+  _checkLogin() {
+    Keyboard.dismiss();
+    console.log(this.state.cEmail);
   }
   render() {
 
     var {navigate} = this.props.navigation;
 
     return (
-      <View style={styles.container}>
 
-        <Logo sologan={this.state.sologan}/>
-        <View style={styles.viewLogin}>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <View
+          onPress={Keyboard.dismiss}
+          keyboardShouldPersistTaps={false}
+          accessible={false}>
+          <Logo sologan={this.state.sologan}/>
+          <View style={styles.viewLogin}>
 
-          <TXTinput SRCimage={imageSource.userLogin.mail} txtContent={this.state.email}/>
+            <TXTinput
+              onChangeText={(cEmail) => this.setSate({cEmail})}
+              SRCimage={imageSource.userLogin.mail}
+              txtContent={this.state.email}/>
 
-          <Line/>
+            <Line/>
 
-          <TXTinput SRCimage={imageSource.userLogin.pass} txtContent={this.state.pass}/>
+            <TXTinputPass
+              SRCimage={imageSource.userLogin.pass}
+              txtContent={this.state.pass}/>
+
+          </View>
+
+          <BtnOK
+            onPress={this
+            ._Login
+            .bind(this)}
+            style={{
+            top: -80,
+            left: 315,
+            zIndex: 1
+          }}/>
+
+          <TouchText2
+            txtContent={this.state.forgot}
+            onPress={this
+            ._ForgotPass
+            .bind(this)}/>
+
+          <Or or={this.state.or}/>
+          <ButtonFace/>
+          <BtnCreateBack
+            onPress={this
+            ._Register
+            .bind(this)}
+            text={this.state.register}/>
+
+          <Rule/>
+
         </View>
-
-        <BtnOK
-          onPress={this
-          ._Login
-          .bind(this)}
-          style={{
-          top: -80,
-          left: 315,
-          zIndex: 1
-        }}/>
-
-        <TouchText2
-          txtContent={this.state.forgot}
-          onPress={this
-          ._ForgotPass
-          .bind(this)}/>
-
-        <Or or={this.state.or}/>
-
-        <BtnCreateBack
-          onPress={this
-          ._Register
-          .bind(this)}
-          text={this.state.register}/>
-
-        <Rule/>
-
-      </View>
+      </KeyboardAvoidingView>
 
     );
   }

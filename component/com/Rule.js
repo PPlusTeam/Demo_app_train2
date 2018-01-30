@@ -10,7 +10,7 @@ export default class Rule extends React.Component {
     }
     render() {
         return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.props.onPress}>
                 <Text
                     style={{
                     fontSize: 18,

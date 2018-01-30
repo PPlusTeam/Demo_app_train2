@@ -17,6 +17,7 @@ import FogotPass from './component/FogotPass';
 import SetProfile from './component/SetProfile';
 import UpdateProfile from './component/UpdateProfile';
 import UpdateInfoMail from './component/UpdateInfoMail';
+import ButtonFace from './component/com/ButtonFace';
 
 
 // import ButtonFace from './component/com/ButtonFace';
@@ -24,9 +25,9 @@ import UpdateInfoMail from './component/UpdateInfoMail';
 
 const Navigation = StackNavigator({
   // LoginFacebook:{screen:LoginFacebook},
-  // ButtonFace : {screen: ButtonFace},
-  Userlogin:{screen: Userlogin},
   Main: {screen:Main},
+  Userlogin:{screen: Userlogin},
+  ButtonFace : {screen: ButtonFace},
   Register: {screen: Register},
   Verify:{screen:Verify},
   UpdateInfoMail:{screen:UpdateInfoMail},

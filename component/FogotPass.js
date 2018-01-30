@@ -44,9 +44,12 @@ export default class FogotPass extends Component {
     };
   }
   _Back() {
-    
+    this
+      .props
+      .navigation
+      .back();
   }
-  _UpdateInfoMail(){
+  _UpdateInfoMail() {
     this
       .props
       .navigation
@@ -67,7 +70,9 @@ export default class FogotPass extends Component {
         </View>
 
         <BtnOK
-          onPress={this._UpdateInfoMail.bind(this)}
+          onPress={this
+          ._UpdateInfoMail
+          .bind(this)}
           style={{
           top: -70,
           left: 315,

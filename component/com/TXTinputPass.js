@@ -1,33 +1,7 @@
 import React, {Component} from 'react';
-import {View, TextInput, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import {View, TextInput, Image, Keyboard, StyleSheet} from 'react-native';
 
-export default class TXTinput extends React.Component {
-    constructor() {
-        super();
-
-    }
-    render() {
-        return (
-            <View style={styles.viewInput}>
-                <Image
-                    style={{
-                    height: 20,
-                    width: 20,
-                    alignSelf: 'center'
-                }}
-                    source={this.props.SRCimage}/>
-                <TextInput
-                    style={styles.edtName}
-                    onEndEditing={this.clearFocus}
-                    keyboardType='email-address'
-                    onChangeText={this.props.onChangetext}
-                    placeholder={this.props.txtContent}
-                    underlineColorAndroid='transparent'/>
-            </View>
-        );
-    }
-}
-class TXTinputPass extends React.Component {
+export default class TXTinputPass extends React.Component {
     constructor() {
         super();
 
@@ -45,6 +19,9 @@ class TXTinputPass extends React.Component {
                 <TextInput
                     style={styles.edtName}
                     secureTextEntry
+                    onEndEditing={this.clearFocus}
+                    onSubmitEditing={Keyboard.dismiss}
+                    onChangeText={this.props.onChangetext}
                     placeholder={this.props.txtContent}
                     underlineColorAndroid='transparent'/>
             </View>
