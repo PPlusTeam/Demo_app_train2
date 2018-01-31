@@ -7,23 +7,30 @@ import {
     TouchableOpacity,
     Button
 } from 'react-native';
-import {TabNavigator} from 'react-navigation';
+import {StackNavigator} from 'react-navigation';
 
 import Party from './Party';
+
+
 
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            home: 'Trasdadwdawng Chủ'
+            home: 'dawdawd'
         }
     }
 
     render() {
         return (
             <View>
-                <Text>{this.state.home}</Text>
+                <Text
+                    style={{
+                    backgroundColor: 'red',
+                    width: null
+                }}>{this.state.home}</Text>
             </View>
+
         );
     }
 }
