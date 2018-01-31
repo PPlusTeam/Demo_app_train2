@@ -25,7 +25,12 @@ import ButtonFace from './component/com/ButtonFace';
 
 const Navigation = StackNavigator({
   // LoginFacebook:{screen:LoginFacebook},
-  Main: {screen:Main},
+  Main: {
+    screen:Main,
+    navigationOptions:({navigation})=>{
+      titile:"Trang Chu"
+    }
+  },
   Userlogin:{screen: Userlogin},
   ButtonFace : {screen: ButtonFace},
   Register: {screen: Register},

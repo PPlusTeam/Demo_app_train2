@@ -10,6 +10,7 @@
     "react": "16.2.0",
     "react-native": "0.52.2",
     "react-native-fbsdk": "^0.7.0",
+    "react-native-fontawesome": "^5.7.0",
     "react-native-gesture-handler": "^1.0.0-alpha.40",
     "react-native-keyboard-aware-scroll-view": "^0.4.3",
     "react-native-material-bottom-navigation": "^0.7.0",

@@ -7,30 +7,22 @@ import {
     TouchableOpacity,
     Button
 } from 'react-native';
-const Left = ({onPress}) => (
-    <TouchableHighlight onPress={onPress}>
-        <Image source={require('../source/images/ic_qs.png')}/>
-    </TouchableHighlight>
-);
-export default class Home extends React.Component {
+import {TabNavigator} from 'react-navigation';
 
-    static navigationOptions = {
-        title: 'Hdasdasdome',
-        headerTitleStyle: {
-            color: 'white'
-        },
-        headerStyle: {
-            backgroundColor: '#141E23'
-        },
-        header: ({ goBack }) => ({
-            left: <Left onPress={goBack} />,
-          }),
+import Party from './Party';
+
+export default class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            home: 'Trasdadwdawng Chủ'
+        }
     }
 
     render() {
         return (
             <View>
-                <Text>dawdw</Text>
+                <Text>{this.state.home}</Text>
             </View>
         );
     }
